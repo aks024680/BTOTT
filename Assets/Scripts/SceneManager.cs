@@ -12,16 +12,21 @@ namespace BTOTT
         private float soundDuration = 2.2f;
 
         private string nameSceneToChange;
-        public void ChangeScene(string nameScene)
+        public void ChangeScene()
         {
             print("切換場景");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("BeforeTOTT");
-            nameSceneToChange = nameScene;
+            //UnityEngine.SceneManagement.SceneManager.LoadScene("BeforeTOTT");
+            nameSceneToChange = "BeforeTOTT";
             Invoke("DelayChangeScene", soundDuration);
 
         }
 
         public void Quit()
+        {
+            Invoke("DelayQuit", soundDuration);
+        }
+
+        private void DelayQuit()
         {
             print("退出遊戲");
             Application.Quit();

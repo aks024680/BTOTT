@@ -10,7 +10,7 @@ public class PropsController : MonoBehaviour
         [SerializeField]
         GameObject SwitchPanel;
 
-        bool a = true;
+        bool a = false;
 
         private void Update()
         {

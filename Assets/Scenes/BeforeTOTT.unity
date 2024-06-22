@@ -18053,7 +18053,7 @@ MonoBehaviour:
   fallMultiplier: 3.2
   lowJumpMultiplier: 5
   pressJump: 0
-  jumpNum: 2
+  jumpNum: 1
   jumpRemainNum: 0
   isOnGround: 1
   groundDistance: 0.5

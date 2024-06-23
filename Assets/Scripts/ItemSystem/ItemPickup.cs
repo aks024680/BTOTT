@@ -16,7 +16,7 @@ namespace BTOTT
 
 
         public Item thisItem;                   //素材所属的Item(物品配置文件)
-        public Inventory thisInventory;			//素材所属的Inventory(背包配置文件)
+        // public Inventory thisInventory;			//素材所属的Inventory(背包配置文件)
         // 当其他对象进入触发器时调用此方法
 
         private void Start()
@@ -44,28 +44,29 @@ namespace BTOTT
                     print(anim);
                 }
 
+                InventoryManager.Instance.Add(thisItem);
+                InventoryManager.Instance.onInventoryCallBack();
                 // 销毁道具对象
                 Destroy(gameObject);
                 print(gameObject + "破壞");
 
-                AddNewItem();//将物品添加到指定物品栏
-                
+                //AddNewItem();//将物品添加到指定物品栏
 
             }
         }
-        public void AddNewItem()//将物品添加到指定物品栏
-        {
+        //public void AddNewItem()//将物品添加到指定物品栏
+        //{
            
-            if (!thisInventory.ItemList.Contains(thisItem))//若指定物品栏中尚未存放该物品
-            {
-                thisInventory.ItemList.Add(thisItem);//在物品栏中添加物品
-            }
-            else
-            {
-                thisItem.itemHeld++;//物品持有数量增加
-            }
-            InventoryManager.RefreshItem();//直接通过数据更新的方式完成背包栏中图像的生成
-        }
+        //    if (!thisInventory.ItemList.Contains(thisItem))//若指定物品栏中尚未存放该物品
+        //    {
+        //        thisInventory.ItemList.Add(thisItem);//在物品栏中添加物品
+        //    }
+        //    else
+        //    {
+        //        thisItem.itemHeld++;//物品持有数量增加
+        //    }
+        //    InventoryManager.RefreshItem();//直接通过数据更新的方式完成背包栏中图像的生成
+        //}
 
 
 
